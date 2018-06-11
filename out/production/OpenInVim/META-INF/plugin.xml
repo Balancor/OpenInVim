@@ -1,0 +1,56 @@
+<idea-plugin>
+    <id>com.guohaiming.openinvim</id>
+    <name>OpenInVim</name>
+    <version>1.0</version>
+    <vendor email="guohaiming@guohaiming.com" url="http://www.guohaiming.com">Hamming Tech</vendor>
+
+    <description><![CDATA[
+      Open the selected file in Vim<br>
+      <em>OpenInVim</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="OpenInTerminal.open.current"  text="Open a file in vim" description="OpenInVim">
+            <add-to-group group-id="EditorPopupMenu" anchor="after"
+                          relative-to-action="CompareClipboardWithSelection"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after"
+                          relative-to-action="RevealIn"/>
+
+
+            <action id="OpenInVim.open.module"
+                    class="actions.OpenInVimAction"
+                    text="OpenInVim"
+                    description="Open the file in vim">
+                <!--<add-to-group group-id="EditorPopupMenu"-->
+                              <!--anchor="after"-->
+                              <!--relative-to-action="OpenInVim.open.current"/>-->
+                <!--<add-to-group group-id="ProjectViewPopupMenu"-->
+                              <!--anchor="after"-->
+                              <!--relative-to-action="OpenInVim.open.current"/>-->
+            </action>
+        </group>
+
+    </actions>
+
+
+
+</idea-plugin>
